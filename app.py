@@ -19,5 +19,19 @@ def kekka():
     menseki=hankei*hankei*3.14
     return render_template("kekka.html",menseki=menseki,ensyu=ensyu)
 
+@app.route("/a")
+def top2():
+    return render_template("kyuyo.html")   
+
+@app.route("/b")
+def kekka2():
+    kane=request.form.get("kane")
+    roudou=request.form.get("roudou")
+
+    okane = kane*roudou
+
+    return render_template("kekka2.html",okane=okane)
+
+
 if __name__=="__main__":
     app.run(debug=True)
